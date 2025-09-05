@@ -1,6 +1,5 @@
 
 
-
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -37,7 +36,7 @@ const Receipt = () => {
   };
 
   return (
-    <div style={{ padding: 20, maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ padding: 20, maxWidth: '100%', margin: '0 auto' }}>
       <div
         id="receipt-content"
         style={{
@@ -46,10 +45,14 @@ const Receipt = () => {
           borderRadius: '10px',
           border: '1px solid #ddd',
           boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+          maxWidth: '600px',
+          margin: '0 auto',
+          color: '#fff',
+          wordWrap: 'break-word',
         }}
       >
-        <h2 style={{ marginBottom: '10px' }}>🎉 Booking Confirmed!</h2>
-        <h3 style={{ color: '#007bff', marginBottom: '15px' }}>{movie.title}</h3>
+        <h2 style={{ marginBottom: '10px', fontSize: '1.5rem' }}>🎉 Booking Confirmed!</h2>
+        <h3 style={{ color: '#00d0ff', marginBottom: '15px', fontSize: '1.2rem' }}>{movie.title}</h3>
 
         <p><strong>Date:</strong> {selectedDate}</p>
         <p><strong>Time:</strong> {selectedTime}</p>
@@ -78,7 +81,16 @@ const Receipt = () => {
         )}
       </div>
 
-      <div style={{ marginTop: 20, display: 'flex', gap: '10px', justifyContent: 'center' }}>
+      {/* Buttons */}
+      <div
+        style={{
+          marginTop: 20,
+          display: 'flex',
+          gap: '10px',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
         <button
           onClick={() => navigate('/')}
           style={{
@@ -88,6 +100,8 @@ const Receipt = () => {
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
+            fontSize: '1rem',
+            minWidth: '150px',
           }}
         >
           🔙 Back to Home
@@ -98,10 +112,12 @@ const Receipt = () => {
           style={{
             padding: '10px 20px',
             backgroundColor: '#124a8a',
-            color: '#ffffffff',
+            color: '#fff',
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
+            fontSize: '1rem',
+            minWidth: '150px',
           }}
         >
           📥 Download Receipt
@@ -112,6 +128,7 @@ const Receipt = () => {
 };
 
 export default Receipt;
+
 
 
 

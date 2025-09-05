@@ -1,6 +1,5 @@
 
 
-// src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
@@ -19,8 +18,9 @@ const sliderSettings = {
   autoplay: true,
   autoplaySpeed: 2000,
   responsive: [
+    { breakpoint: 1200, settings: { slidesToShow: 4 } },
     { breakpoint: 1024, settings: { slidesToShow: 3 } },
-    { breakpoint: 600, settings: { slidesToShow: 2 } },
+    { breakpoint: 768, settings: { slidesToShow: 2 } },
     { breakpoint: 480, settings: { slidesToShow: 1 } },
   ],
 };
@@ -40,7 +40,7 @@ const MovieSlider = ({ title, fetchUrl }) => {
   }, [fetchUrl, title]);
 
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <div style={{ marginBottom: '40px' }}>
       <h3 style={{ margin: '10px 0' }}>{title}</h3>
       <Slider {...sliderSettings}>
         {movies.map((movie) => (
@@ -53,13 +53,13 @@ const MovieSlider = ({ title, fetchUrl }) => {
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
                 style={{
-                  
-                  height: '400px',
-                  borderRadius: '10px',
+                  width: '100%',
+                  maxHeight: '400px',
                   objectFit: 'contain',
+                  borderRadius: '10px',
                 }}
               />
-              <h5 style={{ margin: '10px 0 5px' }}>{movie.title}</h5>
+              <h5 style={{ margin: '10px 0 5px', fontSize: '16px' }}>{movie.title}</h5>
               <p style={{ margin: 0, fontSize: '14px', color: '#fcfcfcff' }}>
                 ⭐ {movie.vote_average?.toFixed(1)} / 10
               </p>
@@ -73,8 +73,8 @@ const MovieSlider = ({ title, fetchUrl }) => {
 
 const Home = () => {
   return (
-    <div style={{ padding: '10px 20px' }}>
-      <h2 style={{ textAlign: 'center' }}>🏠 Welcome to Cineplix</h2>
+    <div style={{ padding: '10px 20px', maxWidth: '1200px', margin: '0 auto' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>🏠 Welcome to Cineplix</h2>
 
       <MovieSlider
         title="🔥 Trending Now"
@@ -101,6 +101,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 
