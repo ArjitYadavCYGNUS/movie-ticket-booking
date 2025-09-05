@@ -1,0 +1,21 @@
+/* App.css or index.css */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+.slick-slider {
+  margin-bottom: 0px !important;
+  padding-bottom: 0 !important;
+}
+
+.slick-slide {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h3 {
+  margin: 10px 0 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

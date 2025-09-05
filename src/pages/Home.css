@@ -1,0 +1,41 @@
+.home-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.slider-wrapper {
+  margin-bottom: 5px !important;
+}
+.slider-wrapper h3 {
+  margin: 5px 0 !important;
+}
+
+
+.movie-card {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover img {
+  transform: scale(1.03);
+}
+
+.movie-card h5 {
+  margin: 8px 0 5px;
+  font-size: 16px;
+}
+
+.movie-card p {
+  margin: 0;
+  font-size: 14px;
+  color:  #ffffff;
+}
