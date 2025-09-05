@@ -1,93 +1,6 @@
 
 
 
-/*import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
-const Receipt = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const {
-    movie,
-    selectedDate,
-    selectedTime,
-    selectedSeats,
-    total = 0,
-  } = location.state || {};
-
-  if (!movie) {
-    return <div style={{ padding: 20 }}>No booking found.</div>;
-  }
-
-  const downloadReceipt = () => {
-    const input = document.getElementById('receipt-content');
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save(`receipt-${movie.title.replace(/\s+/g, '_')}.pdf`);
-    });
-  };
-
-  return (
-    <div style={{ padding: 20, maxWidth: '600px', margin: '0 auto' }}>
-      <div id="receipt-content" style={{
-        background: '#255081ff',
-        padding: '20px',
-        borderRadius: '8px',
-        border: '1px solid #ddd'
-      }}>
-        <h2>🎉 Booking Confirmed!</h2>
-        <h3>{movie.title}</h3>
-        <p><strong>Date:</strong> {selectedDate}</p>
-        <p><strong>Time:</strong> {selectedTime}</p>
-        <p><strong>Seats:</strong> {selectedSeats.join(', ')}</p>
-        <p><strong>Total Paid:</strong> ₹{total}</p>
-      </div>
-
-     //Buttons 
-      <div style={{ marginTop: 20, display: 'flex', gap: '10px' }}>
-        <button
-          onClick={() => navigate('/')}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#007bff',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
-          🔙 Back to Home
-        </button>
-
-        <button
-          onClick={downloadReceipt}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#44098dff',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
-          📥 Download Receipt
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default Receipt;*/
-
-
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -128,7 +41,7 @@ const Receipt = () => {
       <div
         id="receipt-content"
         style={{
-          background: '#f9f9f9',
+          background: '#124a8a',
           padding: '20px',
           borderRadius: '10px',
           border: '1px solid #ddd',
@@ -170,7 +83,7 @@ const Receipt = () => {
           onClick={() => navigate('/')}
           style={{
             padding: '10px 20px',
-            backgroundColor: '#007bff',
+            backgroundColor: '#124a8a',
             color: '#fff',
             border: 'none',
             borderRadius: '5px',
@@ -184,8 +97,8 @@ const Receipt = () => {
           onClick={downloadReceipt}
           style={{
             padding: '10px 20px',
-            backgroundColor: '#28a745',
-            color: '#fff',
+            backgroundColor: '#124a8a',
+            color: '#ffffffff',
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
